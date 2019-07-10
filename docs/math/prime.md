@@ -37,6 +37,39 @@ bool isPrime(a) {
   return 1;
 }
 ```
+### 欧拉筛法
+
+欧拉筛法相对容易一些，一般用来打出一个素数表。
+
+其中心思想：如果i为素数，那么<script type="math/tex">i*2,i*3……i*j</script>都不是素数。
+
+只需将它们标为false/0即可。
+
+```cpp
+const int MAXN=1005; //此处可打出1000以内的素数表，可调整
+bool prime[MAXN];    //prime[i]用来记录i是否为素数
+int Prime[MAXN];     //Prime[i]用来记录第i个素数，如Prime[0]=2
+int num=0;
+void make_prime()
+{
+    memset(prime,true,sizeof(prime));
+    prime[0]=prime[1]=false;
+    for(int i=2;i<=MAXN;i++)
+    {
+        if(prime[i])
+        {
+            Prime[num++]=i;
+        }
+        for(int j=0;j<num&&i*Prime[j]<MAXN;j++)
+        {
+            prime[i*Prime[j]]=false;
+            if(!(i%Prime[j]))
+                break;
+        }
+    }
+    return;
+}
+```
 
 ### Miller-Rabin 素性测试
 
