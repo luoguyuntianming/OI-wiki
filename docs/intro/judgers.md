@@ -231,3 +231,9 @@ players/
 ## CCR-Plus
 
 一款开源的界面好看的评测工具 GitHub 地址：[sxyzccr/CCR-Plus](https://github.com/sxyzccr/CCR-Plus)
+
+#### 使用时必须在环境变量中添加编译器路径（Win10环境下可参考[本文](https://blog.csdn.net/altland/article/details/63252757)）。
+
+使用效果如图：
+
+![CCR](https://cdn.luogu.org/upload/pic/63035.png)
